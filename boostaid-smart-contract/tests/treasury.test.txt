@@ -1,0 +1,40 @@
+## Function Call Examples
+
+### update-percent-fee
+
+::get_costs (contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.treasury update-percent-fee u0 u10)
+
+
+### get-percent-fee
+
+::get_costs (contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.treasury get-percent-fee u0)
+
+
+### update-fixed-fee
+
+::get_costs (contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.treasury update-fixed-fee u0 u1000000)
+
+
+### get-fixed-fee
+
+::get_costs (contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.treasury get-fixed-fee u0)
+
+
+### pay-tax
+
+::get_costs (contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.treasury pay-tax u0)
+
+
+### deposit-fund
+
+::get_costs (contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.treasury deposit-fund u1000000)
+
+
+### withdraw-deposit-fund
+
+::get_costs (contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.treasury withdraw-deposit-fund u1000000 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5 u0)
+
+
+### get-treasury-balance
+
+::get_costs (contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.treasury get-treasury-balance)
