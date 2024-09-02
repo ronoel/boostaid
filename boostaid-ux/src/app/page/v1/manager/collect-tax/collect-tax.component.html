@@ -1,0 +1,13 @@
+<section>
+    <div class="container">
+        <h3>Tax Collection</h3>
+        <p>
+            Balance available for collection: <strong>{{balance / 1000000 | number:'1.1-1'}} STX</strong>
+        </p>
+        @if(!isLoggedIn){
+        <app-connect-wallet [description]="'Connect your wallet to collect tax'"></app-connect-wallet>
+        } @else {
+        <button mat-flat-button color="primary" class="mb-1" (click)="onCollectTax()">Collect tax</button>
+        }
+    </div>
+</section>

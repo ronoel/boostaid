@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>
+    {{'@' + twitterData.username}}
+</h2>
+<mat-dialog-content>
+    
+@if(twitterData.type === 'TIMELINE'){
+    <app-twitter-timeline [username]="twitterData.username"></app-twitter-timeline>
+} @else{
+    <app-twitter-post [username]="twitterData.username" [postId]="twitterData.postId" ></app-twitter-post>
+}
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>CLOSE</button>
+</mat-dialog-actions>

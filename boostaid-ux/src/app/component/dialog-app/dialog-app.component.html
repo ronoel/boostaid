@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>
+    <mat-icon fontIcon="check_circle"></mat-icon>
+    {{title}}
+</h2>
+<mat-dialog-content>
+    <p>
+        Transaction ID: <span class="tx-id-text">0x{{txId}}</span>
+    </p>
+
+    <div class="explorer-info">
+        <p>
+            Your transaction has been broadcasted. This may take a few minutes to confirm. You can check the status of
+            your transaction on the blockchain by clicking the link:
+            <a target="_blank"
+                [href]="'https://explorer.hiro.so/txid/0x' + txId">
+                View on Stacks Explorer
+                <mat-icon fontIcon="open_in_new"></mat-icon>
+            </a>
+        </p>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>OK</button>
+</mat-dialog-actions>

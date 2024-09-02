@@ -1,0 +1,38 @@
+@import '../../../../styles.scss';
+
+.campaigns-section {
+  .container-campaigns {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .campaigns-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @media (min-width: 600px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 900px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .campaign-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .twitter-tweet {
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

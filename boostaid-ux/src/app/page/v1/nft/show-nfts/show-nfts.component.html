@@ -1,0 +1,16 @@
+@if(!isLoggedIn){
+<app-connect-wallet [description]="'Connect your wallet to view your NFTs'"></app-connect-wallet>
+} @else {
+<h3>My NFTs</h3>
+@if(fundraserTokens.length === 0){
+<p>You don't have any NFT yet</p>
+}
+<div class="nft-grid">
+    @for (item of fundraserTokens; track item) {
+    <app-fundraiser-nft [nftId]="item"></app-fundraiser-nft>
+    }
+    @for (item of promoterTokens; track item) {
+    <app-promoter-nft [nftId]="item"></app-promoter-nft>
+    }
+</div>
+}

@@ -1,0 +1,144 @@
+@import '../../../styles.scss';
+@import '../../../styles/cards';
+
+
+.header {
+    padding-top: 64px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        margin-top: 20px;
+        background-color: $color-primary;
+        font-size: 22px;
+        font-weight: lighter;
+        padding: 20px 40px;
+        height: 60px;
+        border-radius: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        padding-top: 0px;
+    }
+}
+
+.section-cards {
+    background-color: $color-light-background;
+}
+
+.section-dao {
+    background-color: $color-light-background;
+}
+
+.section-about {
+
+    font-size: 30px;
+    line-height: 52px;
+
+    font-weight: normal;
+    color: #FFFFFF;
+
+    color: lightgray;
+
+    // span {
+    //     color: $color-dark;
+    //     display: contents;
+    // }
+
+    background-color: $color-section-light-background;
+}
+
+@media screen and (max-width: 600px) {
+    .section-about {
+
+        font-size: 20px;
+        line-height: 32px;
+
+        // span {
+        //     font-weight: normal;
+        // }
+
+        img {
+            width: auto;
+            height: auto;
+        }
+    }
+}
+
+.section-grey {
+
+    text-align: center;
+
+    font-size: 20px;
+    // line-height: 52px;
+
+    font-weight: normal;
+
+    background-color: $color-light-background;
+
+    img {
+        width: auto;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section-grey {
+        img {
+            width: auto;
+            height: auto;
+        }
+    }
+}
+
+.image-integration {
+    width: 100%;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+
+    a {
+        border-radius: 4%;
+        background-color: $color-light-background;
+        padding: 20px;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 150px;
+        text-decoration: none;
+
+        p {
+            color: $color-main-text;
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+.pre-launch-announcement {
+    background-color: $color-light-background; // Assuming you have a variable for background colors
+    text-align: center;
+    padding: 20px 0;
+
+    h2 {
+        color: $color-primary; // Use your primary color variable
+    }
+}

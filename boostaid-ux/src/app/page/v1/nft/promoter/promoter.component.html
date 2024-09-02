@@ -1,0 +1,46 @@
+<section>
+    <div class="container">
+        <h2>Create Promoter NFT</h2>
+        <p>
+            Create a post on X (Twitter) that introduces yourself and your role as a promoter. Once you have created the
+            post, paste the full URL of the post below and click the "Mint NFT" button to create your Promoter NFT.
+        </p>
+
+        @if(!isLoggedIn){
+        <app-connect-wallet [description]="'Connect your wallet to mint your NFT'"></app-connect-wallet>
+        } @else if (!isNftMinted){
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>X (Twitter) Post Link</mat-label>
+                <input matInput placeholder="https://x.com/..." type="url" [formControl]="twitterPostLinkFormControl"
+                    (input)="onSubmit()">
+                <mat-icon matPrefix>link</mat-icon>
+                <mat-hint>Paste the full URL of the X post</mat-hint>
+            </mat-form-field>
+        </p>
+
+        <button mat-flat-button color="primary" class="mb-1" (click)="onMint()"
+            [disabled]="twitterPostLinkBlockquote.length==0">Mint NFT</button>
+        } @else {
+            <button mat-flat-button color="primary" class="mb-1" [routerLink]="'/v1/nft'">See my NFTs</button>
+        }
+
+        @if (twitterPostLinkBlockquote.length > 0) {
+        <div id="twitter-post-load">
+            <blockquote class="twitter-tweet">
+                <p>loading post...</p>
+                <a href="{{twitterPostLinkBlockquote}}"></a>
+            </blockquote>
+        </div>
+        }
+
+        <p>
+            A Promoter NFT is essential for individuals who want to promote campaigns on BoostAid. By
+            <strong>linking a specific X (Twitter) post that introduces yourself and your role as a promoter</strong>, you provide a personal touch,
+            allowing supporters to know who you are and understand your commitment to promoting BoostAid campaigns. This helps BoostAid
+            showcase how relevant and influential you are as a promoter, earning you the recognition of the community. It fosters trust,
+            builds a stronger community, and enhances your influence within the BoostAid ecosystem.
+        </p>
+
+    </div>
+</section>

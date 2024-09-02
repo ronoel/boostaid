@@ -1,0 +1,50 @@
+@import '../../../../../styles.scss';
+
+.campaign-detail-section {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .campaign-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  .campaign-post {
+    flex: 1;
+  }
+
+  .campaign-info {
+    flex: 1;
+  }
+
+  mat-card {
+    width: 100%;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  mat-progress-bar {
+    margin: 20px 0;
+  }
+
+  .donate-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .donate-input {
+    flex: 1;
+  }
+}

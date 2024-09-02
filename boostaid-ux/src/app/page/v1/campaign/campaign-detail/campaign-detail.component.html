@@ -1,0 +1,38 @@
+<section class="campaign-detail-section">
+  <div class="container">
+    @if(campaign){
+      <div class="campaign-content">
+        <div class="campaign-post">
+          <blockquote class="twitter-tweet">
+            <p>loading post...</p>
+            <a href="{{ campaign.twitterPostLink }}"></a>
+          </blockquote>
+        </div>
+        <div class="campaign-info">
+          <mat-card>
+            <mat-card-content>
+              <!-- <button mat-flat-button color="primary" style="width: 100%;" class="mb-1">Share / Refer</button> -->
+              <p>Blocks until finish: {{ campaign.endBlockHeight - currentBlockHeight }}</p>
+              <p><strong>{{ campaign.raised }}</strong> raised of {{ campaign.goal }} STX goal</p>
+              <mat-progress-bar mode="determinate" [value]="(campaign.raised / campaign.goal) * 100"></mat-progress-bar>
+              <p>Number of Donors: {{ campaign.donors }}</p>
+              <!-- <p>Days Left: {{ daysLeft }}</p> -->
+
+              <div class="donate-section">
+                <mat-form-field appearance="outline" class="donate-input">
+                  <mat-label>STX to Donate</mat-label>
+                  <input matInput [(ngModel)]="donationAmount" type="number" placeholder="Enter amount">
+                </mat-form-field>
+                <button mat-flat-button color="primary" (click)="donate()">Donate now!</button>
+              </div>
+            </mat-card-content>
+            <!-- <mat-card-actions> -->
+              
+             
+            <!-- </mat-card-actions> -->
+          </mat-card>
+        </div>
+      </div>
+    }
+  </div>
+</section>

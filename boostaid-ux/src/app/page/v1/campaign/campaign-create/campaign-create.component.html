@@ -1,0 +1,68 @@
+<section>
+    <div class="container">
+        <h2>Create Campaign</h2>
+
+        @if(isProcessing) {
+            <p>
+                Loading...
+            </p>
+        } @else if(!isLoggedIn) {
+        <p>
+            <app-connect-wallet [description]="'Connect your wallet to start creating a campaign.'"></app-connect-wallet>
+        </p>
+        } @else if(fundraserToken) {
+        <form [formGroup]="campaignForm" (ngSubmit)="onSubmit()">
+
+            <p>
+                <strong>Minimum Goal (STX):</strong> This is the minimum amount of STX (Stacks tokens) that needs to be raised for your campaign to be successful. If this goal isn't met, all funds will be refunded to the donors.
+            </p>
+            <mat-form-field appearance="outline">
+                <mat-label>Minimum Goal (STX)</mat-label>
+                <input matInput formControlName="goalMin" type="number" placeholder="Enter the minimum amount of STX">
+            </mat-form-field>
+
+            <p>
+                <strong>Main Goal (STX):</strong> This is the ideal amount of STX you aim to raise through the campaign.
+            </p>
+            <mat-form-field appearance="outline">
+                <mat-label>Main Goal (STX)</mat-label>
+                <input matInput formControlName="goalMain" type="number" placeholder="Enter the main fundraising goal">
+            </mat-form-field>
+
+            <p>
+                <strong>End Block:</strong> Specify the block number at which the campaign will end. If the main goal is not reached by this block, all funds will be refunded. Once the campaign ends, the funds will be transferred to the beneficiary.
+            </p>
+            <mat-form-field appearance="outline">
+                <mat-label>End Block</mat-label>
+                <input matInput formControlName="endBlock" type="number" placeholder="Enter the end block number">
+            </mat-form-field>
+
+            <p>
+                <strong>X Post Link:</strong> Share your campaign's goals by creating a post on X (formerly Twitter). Once the post is live, copy and paste the full URL below.
+            </p>
+            <mat-form-field appearance="outline" class="mb-1">
+                <mat-label>X Post Link</mat-label>
+                <input matInput formControlName="metadata" placeholder="https://x.com/..." type="url">
+                <mat-hint>Paste the complete URL of your X post here</mat-hint>
+            </mat-form-field>
+
+            <button mat-flat-button color="primary" type="submit" [disabled]="!campaignForm.valid || twitterPostLinkBlockquote.length==0">Create Campaign</button>
+        </form>
+        } @else {
+        <p>
+            You need to have the Fundraiser token to create a campaign. Please get your Fundraiser NFT.
+            <button mat-flat-button color="primary" [routerLink]="'/v1/nft/fundraiser/create'">Create Fundraiser NFT</button>
+        </p>
+        }
+
+        @if (twitterPostLinkBlockquote.length > 0) {
+        <div id="twitter-post-load">
+            <blockquote class="twitter-tweet">
+                <p>Loading post...</p>
+                <a href="{{twitterPostLinkBlockquote}}"></a>
+            </blockquote>
+        </div>
+        }
+
+    </div>
+</section>
