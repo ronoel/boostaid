@@ -1,0 +1,23 @@
+@import './../../../styles/colors-tags';
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-dark-background;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF;
+
+    a {
+        color: $color-light-background;
+        text-decoration: none;
+        font-weight: lighter;
+        font-size: 16px;
+    }
+}

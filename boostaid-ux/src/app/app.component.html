@@ -1,0 +1,21 @@
+<app-toolbar></app-toolbar>
+<div class="toolbar-gap"></div>
+@if(isProduction){
+    <div class="warning-message">
+        If you want to test this app and the new features, access the link: <a href="http://test.boostaid.net/">http://test.boostaid.net/</a>
+        <br><br>
+        If you think this app is useful, please, give us a feedback and a reason to keep developing it.
+        <a class="social-link" mat-flat-button color="accent" href="https://docs.google.com/forms/d/e/1FAIpQLSd_HK_kAmzEURD9bdU1ZVu3NWcX-Cj2DnlH-3WT8VOApDEaCQ/viewform?usp=sf_link" target="_blank">Give
+            Feedback!</a>
+    </div>
+} @else {
+    <div class="warning-message">
+        This is a test version. Please ensure you are using a wallet configured for testnet.
+        <br><br>
+        If you think this app is useful, please, give us a feedback and a reason to keep developing it.
+        <a class="social-link" mat-flat-button color="accent" href="https://docs.google.com/forms/d/e/1FAIpQLSd_HK_kAmzEURD9bdU1ZVu3NWcX-Cj2DnlH-3WT8VOApDEaCQ/viewform?usp=sf_link" target="_blank">Give
+            Feedback!</a>
+    </div>
+}
+<router-outlet />
+<app-footer></app-footer>

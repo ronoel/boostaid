@@ -1,0 +1,55 @@
+<section>
+    <div class="container">
+        <h2>Create Fundraiser NFT</h2>
+        <p>
+            Create a post on X (Twitter) that details your project and fundraising goals. Once you have created the
+            post,
+            paste the full URL of the post below and click the "Mint NFT" button to create your Fundraiser NFT.
+        </p>
+
+        @if(!isLoggedIn){
+        <app-connect-wallet [description]="'Connect your wallet to mint your NFT'"></app-connect-wallet>
+        } @else if (!isNftMinted){
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>X (Twitter) Post Link</mat-label>
+                <input matInput placeholder="https://x.com/..." type="url" [formControl]="twitterPostLinkFormControl"
+                    (input)="onSubmit()">
+                <mat-icon matPrefix>link</mat-icon>
+                <mat-hint>Paste the full URL of the X post</mat-hint>
+            </mat-form-field>
+        </p>
+
+        <button mat-flat-button color="primary" class="mb-1" (click)="onMint()"
+            [disabled]="twitterPostLinkBlockquote.length==0">Mint NFT</button>
+        } @else {
+            <button mat-flat-button color="primary" class="mb-1" [routerLink]="'/v1/nft'">See my NFTs</button>
+            <br>
+            <button mat-flat-button color="primary" class="mb-1" [routerLink]="'/v1/campaign/create'">Create Campaign</button>
+        }
+
+        @if (twitterPostLinkBlockquote.length > 0) {
+        <div id="twitter-post-load">
+            <blockquote class="twitter-tweet">
+                <p>loading post...</p>
+                <a href="{{twitterPostLinkBlockquote}}"></a>
+            </blockquote>
+        </div>
+        }
+
+        <p>
+            A Fundraiser NFT is essential for project creators who want to launch and manage fundraising campaigns on
+            BoostAid. By
+            <strong>linking a specific X (Twitter) post that details your project and fundraising goals</strong>, you
+            provide a clear and concise
+            way for supporters to learn more about your initiative. This allows you to share specific information,
+            answer questions
+            directly related to your campaign, and foster a focused community around your fundraising efforts.
+        </p>
+
+        <!-- <button mat-flat-button color="primary" (click)="onGetMetadata1()">Get NFT 1</button>
+        <button mat-flat-button color="primary" (click)="onGetMetadata2()">Get NFT 2</button> -->
+
+
+    </div>
+</section>

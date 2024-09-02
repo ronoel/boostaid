@@ -1,0 +1,45 @@
+
+@import 'colors';
+
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 0 0 calc(50% - 20px);
+
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: lighter;
+}
+
+.card h3 {
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    color: $color-main-text;
+    font-size: 20px;
+    font-weight: normal;
+    border-bottom: $color-primary 1px solid;
+}
+
+@media screen and (max-width: 991px) {
+    .card {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        flex: 0 0 100%;
+    }
+}

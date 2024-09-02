@@ -1,0 +1,19 @@
+<section id="campaigns" class="campaigns-section">
+    <div class="container-campaigns">
+        <h2>Available Campaigns</h2>
+        <button mat-flat-button color="accent" [routerLink]="'/v1/campaign/create'">Create New Campaign</button>
+        <div class="campaigns-grid" id="twitter-post-load">
+            @for (item of campaigns; track item.id) {
+            <div class="campaign-card">
+                <blockquote class="twitter-tweet">
+                    <p>loading post...</p>
+                    <a href="{{item.twitterPostLink}}"></a>
+                </blockquote>
+                <button mat-flat-button color="primary" [routerLink]="['/v1/campaign', item.id]">View Campaign</button>
+            </div>
+            }@empty {
+            <p>No campaigns available at the moment. Be the first to create one!</p>
+            }
+        </div>
+    </div>
+</section>

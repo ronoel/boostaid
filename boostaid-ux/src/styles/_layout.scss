@@ -1,0 +1,75 @@
+
+
+// html,
+// body {
+//     height: 100%;
+//     margin: 0;
+//     padding: 0;
+//     display: block;
+// }
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin: 72px 0px;
+  width: 800px;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  padding: 0 0 20px 0;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+    // margin: 72px 20px;
+  }
+}
+
+/* In your component's CSS file */
+.mobile-image {
+  display: block;
+  /* Display by default on mobile */
+}
+
+.desktop-image {
+  display: none;
+  /* Hidden by default */
+}
+
+@media screen and (min-width: 600px) {
+
+  /* Adjust breakpoint as needed */
+  .mobile-image {
+    display: none;
+  }
+
+  .desktop-image {
+    display: block;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: column;
+  /* Stack items vertically */
+  align-items: center;
+  /* Center items horizontally */
+  justify-content: center;
+  /* Center items vertically */
+  text-align: center;
+  /* Ensure the text is centered */
+}

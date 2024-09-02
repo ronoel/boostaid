@@ -1,0 +1,16 @@
+@import '../../../styles/footer.scss';
+
+.social-link {
+    margin-right: 32px;
+    vertical-align: middle;
+}
+
+.social-link-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+.company-name-footer {
+    font-size: 33px;
+}

@@ -1,0 +1,32 @@
+<mat-toolbar>
+    <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="clickable" routerLink="/">
+        <span>Boost</span><span class="text-color-primary">Aid</span>
+    </div>
+
+    <span class="toolbar-spacer"></span>
+    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button> -->
+
+    @if (identityAddress) {
+    <button mat-flat-button color="primary" [matMenuTriggerFor]="menu">
+        {{identityAddress | slice:0:4}}...{{identityAddress | slice:37}}
+    </button>
+    <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="'/v1/nft'">Profile</button>
+        <button mat-menu-item (click)="signOut()">Disconnect</button>
+    </mat-menu>
+
+    } @else {
+    <button mat-flat-button color="primary" (click)="signIn()">Connect Wallet</button>
+    }
+
+
+</mat-toolbar>

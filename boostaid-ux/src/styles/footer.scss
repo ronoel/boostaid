@@ -1,0 +1,17 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: #424242;
+    background-color: #09202f;
+    color: #F0F0F4;
+    padding-bottom: 60px;
+}
+
+footer .container {
+    display: block;
+}
+
+footer img {
+    max-width: 80px;
+}

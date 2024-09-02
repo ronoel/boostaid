@@ -8,10 +8,8 @@ clarinet devnet start
 ```
 clarinet contracts new funding-campaign
 
-clarinet contracts new fbtc-market
-```
-
 clarinet contracts new fundraiser
+```
 
 ## Run tests
 
