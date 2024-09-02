@@ -48,21 +48,38 @@ genesis:
 plan:
   batches:
     - id: 0
-      transactions: []
-      epoch: "2.0"
-    - id: 1
       transactions:
         - emulated-contract-publish:
             contract-name: nft-trait
             emulated-sender: SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9
             path: "./.cache/requirements/SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait.clar"
             clarity-version: 1
-      epoch: "2.1"
-    - id: 2
+      epoch: "2.0"
+    - id: 1
       transactions:
         - emulated-contract-publish:
             contract-name: treasury
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/treasury.clar
+            clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: fundraiser-nft
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/fundraiser-nft.clar
+            clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: promoter-nft
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/promoter-nft.clar
+            clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: funding-campaign
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/funding-campaign.clar
+            clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: promoter-rank
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/promoter-rank.clar
             clarity-version: 2
       epoch: "2.5"
